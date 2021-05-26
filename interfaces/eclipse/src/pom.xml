@@ -22,7 +22,8 @@
 	</properties>
 	<modules>
 		<module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.ui</module>
-		<module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.ui.tests</module>
+		<!-- TODO Readd commented module below once done! -->
+		<!-- <module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.ui.tests</module> -->
 		<module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.target</module>
 		<module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.feature</module>
 		<module>uk.ac.kcl.inf.mdeoptimiser.interfaces.eclipse.repository</module>

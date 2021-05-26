@@ -23,7 +23,6 @@ import uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.output.MDEOBatch;
 import uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.output.MDEOResultsOutput;
 
 public class SearchCaseStudy {
-
   Injector injector = new MoptStandaloneSetup().createInjectorAndDoEMFRegistration();
 
   ParseHelper<Optimisation> parseHelper;
@@ -41,7 +40,7 @@ public class SearchCaseStudy {
   @Test
   @Disabled
   public void refactoringModelA(TestInfo testInfo) throws Exception {
-
+    
     var modelSpec =
         String.join(
             System.getProperty("line.separator"),

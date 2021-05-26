@@ -52,7 +52,7 @@ public class SystemInformationDescriptor implements ResultsDescriptor {
   public String getOperatingSystem() {
     var operatingSystem = systemInfo.getOperatingSystem();
     return String.format(
-        "Operating system: %s %s", operatingSystem.getFamily(), operatingSystem.getVersion());
+        "Operating system: %s %s", operatingSystem.getFamily(), operatingSystem.getVersionInfo().getVersion());
   }
 
   /** Get information about the JDK used to run the current search batch. */
@@ -74,7 +74,7 @@ public class SystemInformationDescriptor implements ResultsDescriptor {
     var centralProcessor = hardwareAbstractionLayer.getProcessor();
     return String.join(
         "\n",
-        String.format("Processor: %s", centralProcessor.getName()),
+        String.format("Processor: %s", centralProcessor.getProcessorIdentifier().getName()),
         String.format(
             "Processor Cores: %s physical %s logical",
             centralProcessor.getPhysicalProcessorCount(),
