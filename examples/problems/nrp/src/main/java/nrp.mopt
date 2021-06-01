@@ -1,6 +1,6 @@
 problem{
 	basepath <src/main/resources/models/nrp/>
-	metamodel <nextReleaseProblem.ecore>
+	metamodel <models.nrp.nextReleaseProblem.EcorePackage>
 	model <nrp-model-25-cus-50-req-203-sa.xmi>	
 }
 goal {

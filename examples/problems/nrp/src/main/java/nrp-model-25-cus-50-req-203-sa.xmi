@@ -2,7 +2,7 @@
 <NRP:NRP xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:NRP="http://model.nrp">
+    xmlns:NRP="http://model.nrp"
     xsi:schemaLocation="http://model.nrp nextReleaseProblem.ecore">
   <customers name="Evangeline Littel" importance="2.0" assigns="//@requirements.2/@valuations.0 //@requirements.2/@valuations.1 //@requirements.7/@valuations.1 //@requirements.12/@valuations.0 //@requirements.12/@valuations.1 //@requirements.15/@valuations.2 //@requirements.16/@valuations.0 //@requirements.20/@valuations.0 //@requirements.21/@valuations.1 //@requirements.25/@valuations.1 //@requirements.28/@valuations.0 //@requirements.28/@valuations.2 //@requirements.32/@valuations.1 //@requirements.33/@valuations.0 //@requirements.34/@valuations.0 //@requirements.35/@valuations.3 //@requirements.38/@valuations.1 //@requirements.38/@valuations.2 //@requirements.43/@valuations.0 //@requirements.47/@valuations.1 //@requirements.48/@valuations.1 //@requirements.49/@valuations.2"/>
   <customers name="Ruby Robel" importance="3.0" assigns="//@requirements.1/@valuations.1 //@requirements.7/@valuations.1 //@requirements.7/@valuations.2 //@requirements.9/@valuations.0 //@requirements.10/@valuations.1 //@requirements.18/@valuations.2 //@requirements.24/@valuations.1 //@requirements.25/@valuations.0 //@requirements.30/@valuations.1 //@requirements.34/@valuations.1 //@requirements.35/@valuations.0 //@requirements.36/@valuations.1 //@requirements.47/@valuations.2 //@requirements.48/@valuations.1 //@requirements.48/@valuations.2 //@requirements.49/@valuations.0 //@requirements.49/@valuations.2"/>
