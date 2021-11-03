@@ -11,6 +11,7 @@ import org.eclipse.emf.henshin.model.Rule;
 public class MdeoRuleApplicationImpl extends RuleApplicationImpl {
   
   public static ArrayList<Long> timings = new ArrayList<>();
+  public static ArrayList<Long> mutationTimings = new ArrayList<>();
 
   public MdeoRuleApplicationImpl(Engine engine) {
     super(engine);
@@ -51,6 +52,8 @@ public class MdeoRuleApplicationImpl extends RuleApplicationImpl {
       return false;
     }
 
+    long mutationStartTime = System.nanoTime();
+    
     resultMatch = new MatchImpl((Rule) unit, true);
     change = engine.createChange((Rule) unit, graph, completeMatch, resultMatch);
 
@@ -63,6 +66,8 @@ public class MdeoRuleApplicationImpl extends RuleApplicationImpl {
 
     change.applyAndReverse();
     isExecuted = true;
+    
+    mutationTimings.add(System.nanoTime() - mutationStartTime);
 
     if (monitor != null) {
       monitor.notifyExecute(this, true);

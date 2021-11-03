@@ -1,5 +1,6 @@
 package uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.operators.mutation.application;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.emf.henshin.model.Unit;
@@ -16,6 +17,9 @@ public abstract class AbstractMutationStrategy extends AbstractStrategyParameter
   protected final MutationStepSizeStrategy mutationStepSizeStrategy;
   protected final OperatorSelectionStrategy operatorSelectionStrategy;
   protected final OperatorRepairStrategy operatorRepairStrategy;
+  
+  public static ArrayList<Long> timings = new ArrayList<>();
+  public static ArrayList<Long> mutationTimings = new ArrayList<>();
 
   public AbstractMutationStrategy(
       SearchOperatorConfiguration searchOperatorConfiguration,
@@ -29,13 +33,20 @@ public abstract class AbstractMutationStrategy extends AbstractStrategyParameter
   }
 
   public Solution mutate(Solution model) {
+    long startTime = System.nanoTime();    
     var candidateSolution = new Solution(model);
+    timings.add(System.nanoTime() - startTime);
 
+    long mutationStartTime = System.nanoTime();
+    
     var graph = new EGraphImpl(candidateSolution.getModel());
 
     var stepTransformations = applyOperators(candidateSolution, graph);
 
     candidateSolution.updateModel(graph.getRoots().get(0), stepTransformations);
+    
+    mutationTimings.add(System.nanoTime() - mutationStartTime);
+    
     return candidateSolution;
   }
 

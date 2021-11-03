@@ -1,5 +1,7 @@
 package uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.moea.problem;
 
+import java.util.ArrayList;
+
 import org.moeaframework.core.Solution;
 import org.moeaframework.problem.AbstractProblem;
 import uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.executor.SolutionGenerator;
@@ -7,6 +9,8 @@ import uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.executor.SolutionG
 public class MoeaOptimisationProblem extends AbstractProblem {
 
   SolutionGenerator solutionGenerator;
+
+  public static ArrayList<Long> timings = new ArrayList<>();
 
   public MoeaOptimisationProblem(
       int numberOfVariables, int numberOfObjectives, int numberOfConstraints) {
@@ -26,6 +30,8 @@ public class MoeaOptimisationProblem extends AbstractProblem {
 
     var moeaSolution = (MoeaOptimisationSolution) solution;
 
+    long startTime = System.nanoTime();
+    
     // Calculate objectives
     solutionGenerator
         .getObjectiveFunctions()
@@ -43,6 +49,8 @@ public class MoeaOptimisationProblem extends AbstractProblem {
                 moeaSolution.setConstraint(
                     solutionGenerator.getConstraintFunctions().indexOf(constraintFunction),
                     constraintFunction.computeFitness(moeaSolution.getModel())));
+    
+    timings.add(System.nanoTime() - startTime);
   }
 
   @Override
