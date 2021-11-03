@@ -34,7 +34,7 @@ public class MoeaOptimisationProblem extends AbstractProblem {
                 moeaSolution.setObjective(
                     solutionGenerator.getObjectiveFunctions().indexOf(fitnessFunction),
                     fitnessFunction.computeFitness(moeaSolution.getModel())));
-
+    
     // Calculate Constraints
     solutionGenerator
         .getConstraintFunctions()

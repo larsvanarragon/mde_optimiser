@@ -38,7 +38,7 @@ public class SearchCaseStudy {
 
   // MODEL A
   @Test
-  @Disabled
+  
   public void refactoringModelA(TestInfo testInfo) throws Exception {
     
     var modelSpec =

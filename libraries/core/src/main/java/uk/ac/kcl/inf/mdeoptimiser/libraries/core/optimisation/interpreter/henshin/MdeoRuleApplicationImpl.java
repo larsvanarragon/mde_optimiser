@@ -1,5 +1,7 @@
 package uk.ac.kcl.inf.mdeoptimiser.libraries.core.optimisation.interpreter.henshin;
 
+import java.util.ArrayList;
+
 import org.eclipse.emf.henshin.interpreter.ApplicationMonitor;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.impl.MatchImpl;
@@ -7,6 +9,8 @@ import org.eclipse.emf.henshin.interpreter.impl.RuleApplicationImpl;
 import org.eclipse.emf.henshin.model.Rule;
 
 public class MdeoRuleApplicationImpl extends RuleApplicationImpl {
+  
+  public static ArrayList<Long> timings = new ArrayList<>();
 
   public MdeoRuleApplicationImpl(Engine engine) {
     super(engine);
@@ -33,7 +37,10 @@ public class MdeoRuleApplicationImpl extends RuleApplicationImpl {
 
     // Do we need to derive a complete match?
     if (completeMatch == null) {
+      long startTime = System.nanoTime();
       completeMatch = engine.findMatches((Rule) unit, graph, partialMatch).iterator().next();
+      timings.add(System.nanoTime() - startTime);
+      
       isCompleteMatchDerived = true;
     }
 
