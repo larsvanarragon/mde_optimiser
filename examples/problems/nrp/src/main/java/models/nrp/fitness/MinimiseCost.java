@@ -16,7 +16,7 @@ public class MinimiseCost implements IGuidanceFunction {
             .mapToDouble(sa -> sa.getCosts().get(0).getAmount())
             .sum();
 
-    System.out.println("Calculated selectedArtifacts cost: " + selectedArtifactsCost);
+//    System.out.println("Calculated selectedArtifacts cost: " + selectedArtifactsCost);
 
     return selectedArtifactsCost;
   }

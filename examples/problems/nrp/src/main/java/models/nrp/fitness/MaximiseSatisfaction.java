@@ -50,7 +50,7 @@ public class MaximiseSatisfaction implements IGuidanceFunction {
             this.getReferenceFeature(model.getModel(), "customers"),
             Double.valueOf(0.0d),
             _function);
-    InputOutput.<String>println(("Found satisfaction: " + satisfaction));
+//    InputOutput.<String>println(("Found satisfaction: " + satisfaction));
     return ((-1) * (satisfaction).doubleValue());
   }
 
